@@ -1,0 +1,11 @@
+backend/node_modules
+frontend/node_modules
+frontend/dist
+backend/dist
+backend/files
+backend/dist
+backend/TLS/*.pem
+backend/.env
+prod_server
+todo.txt
+node_modules
