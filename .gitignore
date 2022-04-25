@@ -6,6 +6,7 @@ backend/files
 backend/dist
 backend/TLS/*.pem
 backend/.env
-prod_server
+backend/log/logs.log
+OpenCloudServer
 todo.txt
 node_modules

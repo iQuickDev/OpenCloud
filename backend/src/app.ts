@@ -8,6 +8,7 @@ import shell from './routes/shell'
 import httpsServer from 'https'
 import path from 'path'
 import connectHistory from 'connect-history-api-fallback'
+const getIP = require('external-ip')()
 
 const app = express()
 const port = vars.port || 5555
@@ -32,8 +33,17 @@ app.use(express.static(`${__dirname}/../dist`))
                 },
                 app
             )
-            .listen(port, () => {
-                console.log(`https://quicksense.ddns.net:${port}`)
+            .listen(port, async () => {
+                getIP((err : Error, ip : String) =>
+                {
+                    if (err)
+                    {
+                        console.error(err)
+                        console.info(`Server started on port ${port}`)
+                    }
+                    else
+                        console.info(`Server started on https://${ip}:${port}`)
+                })
             })
     } catch (e) {
         console.error(e)

@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express'
 import { exec } from 'child_process'
+import { asyncWrapper } from '../helper'
 const shell = Router()
 const allowedCmds = [
     'ls',
@@ -24,8 +25,8 @@ let workingDir: string = 'files'
 exec('pwd', (err, stdout, stderr) => {
     workingDir = `${stdout.substring(0, stdout.length - 1)}/files`
 })
-// eval
-shell.post('/exec', (req: Request, res: Response) => {
+
+shell.post('/exec', asyncWrapper((req: Request, res: Response) => {
     for (const cmd of allowedCmds) {
         if (req.body.command.includes(cmd)) {
             exec(
@@ -42,6 +43,6 @@ shell.post('/exec', (req: Request, res: Response) => {
         }
     }
     res.sendStatus(403)
-})
+}))
 
 export default shell
