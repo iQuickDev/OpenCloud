@@ -23,3 +23,11 @@ The server requires a MongoDB database on the MongoDB Atlas (locally hosted DBs 
 
 ### Known bugs
 <b>[CRITICAL]</b> The embedded terminal allows escaping from the files directory
+
+## Showcase
+### The Login (animated)
+![login](https://user-images.githubusercontent.com/38632219/165107836-32ff4bf2-48df-4e52-b7b9-7dfb67e6eea1.gif)
+### The Dashboard
+![dashboard](https://cdn.discordapp.com/attachments/967132141660033094/968148819529306162/unknown.png)
+### The Terminal
+![terminal](https://cdn.discordapp.com/attachments/967132141660033094/968148360383053864/unknown.png)
